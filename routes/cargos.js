@@ -1,30 +1,30 @@
 var express = require('express');
 var router = express.Router();
-var user = require('../controllers/user.controller');
+var cargo = require('../controllers/cargo.controller');
 
-//Insert 
+// Insert Cargos
 router.post('/', function(req, res){
-  return user.create(req,res);
+  return cargo.create(req,res);
 });
 
 //find all
 router.get('/', function(req, res){
-  return user.findAll(req,res);
+  return cargo.findAll(req,res);
 });
 
 //find by Id
 router.get('/:id', function(req, res){
-  return user.findById(req,res);
+  return cargo.findById(req,res);
 });
 
 //delete by Id
 router.delete('/:id', function(req, res){
-  return user.deleteById(req,res);
+  return cargo.deleteById(req,res);
 });
 
 //update by id
 router.put('/:id', function(req, res){
-	return user.updateById(req,res);
+	return cargo.updateById(req,res);
 });
 
 module.exports = router;

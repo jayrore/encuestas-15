@@ -1,30 +1,31 @@
 var express = require('express');
 var router = express.Router();
-var user = require('../controllers/user.controller');
+var colonia = require('../controllers/colonia.controller');
 
-//Insert 
+//fecth array de usuarios
 router.post('/', function(req, res){
-  return user.create(req,res);
+	console.log("colonia");
+  return colonia.create(req,res);
 });
 
 //find all
 router.get('/', function(req, res){
-  return user.findAll(req,res);
+  return colonia.findAll(req,res);
 });
 
 //find by Id
 router.get('/:id', function(req, res){
-  return user.findById(req,res);
+  return colonia.findById(req,res);
 });
 
 //delete by Id
 router.delete('/:id', function(req, res){
-  return user.deleteById(req,res);
+  return colonia.deleteById(req,res);
 });
 
 //update by id
 router.put('/:id', function(req, res){
-	return user.updateById(req,res);
+	return colonia.updateById(req,res);
 });
 
 module.exports = router;
